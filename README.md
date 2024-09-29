@@ -1,24 +1,23 @@
 # Telegram-BO-for-Automatic-Job-application-for-linkedin-and-Telegram
-This bot automates the process of applying for jobs on LinkedIn and Internshala using Selenium WebDriver. Users can submit their cookies for either platform, and the bot will handle job applications, including answering questions and submitting applications automatically.<br>
-# Features <br>
-<li>
-<ul>User-friendly interface through Telegram.</ul>
-<ul>Supports LinkedIn and Internshala for job applications.</ul>
-<ul>Receives user cookies securely.</ul>
-</li>
-# Asynchronous job application handling using a thread pool.
+This bot automates the process of applying for jobs on LinkedIn and Internshala using Selenium WebDriver. Users can submit their cookies for either platform, and the bot will handle job applications, including answering questions and submitting applications automatically
+## Features 
+. User-friendly interface through Telegram.  
+. Supports LinkedIn and Internshala for job applications.
+. Receives user cookies securely.  
+. Asynchronous job application handling using a thread pool.
+
 ## Requirements
-Python 3.x
-Libraries:
-python-telegram-bot
-selenium
-concurrent.futures
-logging
-Setup Instructions
-Install Required Libraries:
-bash
-Copy code
-pip install python-telegram-bot selenium
+. Python 3.x
+. Libraries:
+. python-telegram-bot
+. selenium
+. concurrent.futures
+. logging
+. Setup Instructions
+. Install Required Libraries:
+. bash
+. Copy code
+. pip install python-telegram-bot selenium
 
 
 Set Up Selenium WebDriver:
@@ -41,39 +40,43 @@ Conversation States:
 CHOOSING_PLATFORM and RECEIVING_COOKIE: Used to manage the conversation flow with users.
 Keyboards:
 PLATFORM_KEYBOARD: A simple keyboard layout for platform selection.
-Bot Handlers
-start(update, context):
+## Bot Handlers
+### start(update, context):
 Initiates the conversation and prompts the user to select a platform.
-choose_platform(update, context):
+### choose_platform(update, context):
 Handles user platform selection and prompts for cookie submission.
-receive_cookies(update, context):
+### receive_cookies(update, context):
 Receives and stores the user's cookie for the selected platform.
-apply(update, context):
+### apply(update, context):
 Initiates the job application process for the selected platform using the stored cookie.
-stop(update, context):
+### stop(update, context):
 Stops the current job application process, quitting the Selenium driver and clearing user data.
-Selenium Automation Functions
+
+## Selenium Automation Functions
 click_until_input_fields_or_submit(driver, chat_id):
 Clicks buttons and fills in input fields until the job application is complete.
 apply_for_linkedin_jobs(linkedin_cookie, chat_id):
 Automates job applications on LinkedIn using the provided cookie.
 apply_for_internshala_jobs(internshala_cookie, chat_id):
 Automates job applications on Internshala using the provided cookie.
-Main Function
+### Main Function
 main():
 Initializes the bot and adds command handlers for starting conversations, applying for jobs, and stopping processes.
-Usage
-Start the Bot:
+## Usage
+
+### Start the Bot:
 Type /start to initiate the conversation.
-Select Platform:
+### Select Platform:
 Choose between LinkedIn or Internshala.
-Submit Cookie:
+### Submit Cookie:
 Provide your session cookie for the selected platform.
-Apply for Jobs:
+### Apply for Jobs:
 Use the /apply command to start the application process.
-Stop Process:
+### Stop Process:
 Use the /stop command to terminate any ongoing job application processes.
-Logging
+
+## Logging
+
 Logs are generated during the bot's execution, providing insights into the application's flow and errors. Monitor the console output for debugging and operational status.
-Conclusion
+## Conclusion
 This bot streamlines the job application process on LinkedIn and Internshala, making it easier for users to apply for positions without manual input. For any issues or feature requests, please check the codebase or open an issue in the repository.
